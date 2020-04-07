@@ -81,7 +81,7 @@ $(document).ready(function() {
         }
         else if (totalScore > 3 && totalScore <= 9) {
             techplacement = "Black Widow";
-            imgSrc = "2wCEAAkGBxMTEhUTExMWFhUXFxoYGBgYGBcYGBgXFxcWFx0aGBgYHSggGBolHRcXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lHyUtLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf";
+            imgSrc = "https://icdn4.digitaltrends.com/image/digitaltrends/black-widow-2-1200x752.jpg";
             displayResult(techplacement,name,imgSrc);
         }
         else if (totalScore <=3) {
