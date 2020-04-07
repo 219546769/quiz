@@ -3,27 +3,27 @@
 $(document).ready(function() {
     $("button").click(function() {
         var name = $("#name").val();
-        //var techPlacement = "TBD";
-        //var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
+        var techPlacement = "TBD";
+        var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
         var q1Result = $("#question1").val();
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
         var totalScore;
-        totalScore = totalScore + CalculateQuestion1Score(q1Result);
-        totalScore = totalScore + CalculateQuestion2Score(q2Result);
-        totalScore = totalScore + CalculateQuestion3Score(q3Result);
-        //console.log(totalScore);
-        placement(totalScore,name);
-        console.log(totalScore)
+        totalScore = calculateQuestion1Score(q1Result);
+        totalScore = totalScore + calculateQuestion2Score(q2Result);
+        totalScore = totalScore + calculateQuestion3Score(q3Result);
+        console.log(totalScore);
+        placement(totalScore, name);
+
     });
 
 
     function displayResult(techplacement, name, imgSrc) {
-        return $(".result").html("Congratulations, " + name + " This is your meme " + techplacement + "<img src=" + imgSrc + ">");
+        return $(".result").html("<h2>Congratulations, " + name + " This is your superhero " + techplacement + "</h2>"+"<img src=" + imgSrc + ">");
 
     }
 
-    function CalculateQuestion1Score(question1) {
+    function calculateQuestion1Score(question1) {
         if (question1 === " keep it" || question1 === "Keep it") {
             return 2;
         }
@@ -36,7 +36,7 @@ $(document).ready(function() {
         }
     }
 
-    function CalculateQuestion2Score(question2) {
+    function calculateQuestion2Score(question2) {
         if (question2 === "invisible" || question2 === "invisible") {
             return 2;
         }
@@ -49,35 +49,42 @@ $(document).ready(function() {
         }
     }
 
-    function CalculateQuestion3Score(question3) {
+    function calculateQuestion3Score(question3) {
         //console.log(question3);
-        if (question3 === "ceviche" || question3 === "Ceviche") {
-            return 2;
+        //if (question3 === "ceviche" || question3 === "Ceviche") {
+        //    return 2;
+        //}
+        //else if (question3 === "Tacos" || question3 === "tacos") {
+          //  return 3;
+        //}
+        //else {
+          //  return 1;
+        //}
+        if(question3.length >2 ) {
+          return 2;
         }
-        else if (question3 === "Tacos" || question3 === "tacos") {
-            return 3;
+        else if (question3.length > 4 && question3.length <=9) {
+          return 3;
         }
-        else {
-            return 1;
+        else if (question3.length >9) {
+          return 1;
         }
-
     }
 
     function placement(totalScore,name) {
         var techplacement;
         var imgSrc;
-        console.log(totalScore);
-        if (totalScore > 11) {
+        if (totalScore > 9) {
             techplacement = "Superman";
             imgSrc = "https://images-na.ssl-images-amazon.com/images/I/81%2Bx0iZ9MEL._AC_SX425_.jpg";
             displayResult(techplacement,name,imgSrc);
         }
-        else if (totalScore > 8 && totalScore <= 11) {
+        else if (totalScore > 3 && totalScore <= 9) {
             techplacement = "Black Widow";
             imgSrc = "2wCEAAkGBxMTEhUTExMWFhUXFxoYGBgYGBcYGBgXFxcWFx0aGBgYHSggGBolHRcXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0lHyUtLS0vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf";
             displayResult(techplacement,name,imgSrc);
         }
-        else if (totalScore == 5) {
+        else if (totalScore <=3) {
             techplacement = "batmannnn";
             imgSrc = "https://images-na.ssl-images-amazon.com/images/I/810c4ywQsEL._AC_SY679_.jpg";
             displayResult(techplacement,name,imgSrc);
