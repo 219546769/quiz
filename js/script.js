@@ -79,12 +79,12 @@ $(document).ready(function() {
             imgSrc = "https://images-na.ssl-images-amazon.com/images/I/81%2Bx0iZ9MEL._AC_SX425_.jpg";
             displayResult(techplacement,name,imgSrc);
         }
-        else if (totalScore > 7&& totalScore <= 9) {
+        else if (totalScore > 5&& totalScore <= 9) {
             techplacement = "Black Widow";
             imgSrc = "https://icdn4.digitaltrends.com/image/digitaltrends/black-widow-2-1200x752.jpg";
             displayResult(techplacement,name,imgSrc);
         }
-        else if (totalScore <=7) {
+        else if (totalScore ==5) {
             techplacement = "batmannnn";
             imgSrc = "https://images-na.ssl-images-amazon.com/images/I/810c4ywQsEL._AC_SY679_.jpg";
             displayResult(techplacement,name,imgSrc);
